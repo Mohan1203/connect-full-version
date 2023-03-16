@@ -1,0 +1,127 @@
+.container {
+    padding: 10px;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .instagram{
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 3rem;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    width: 20vw;
+    margin: 0 auto;
+    margin-top: 25px;
+    justify-content: center;
+  }
+  
+  .login-form input {
+    border: 1px solid #ccc;
+    display: flex;
+    width: 15rem;
+    flex-direction: row;
+    margin-bottom: 1vh;
+    padding: 1.5vh;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .login-form input:focus {
+    outline: none;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 1.5vh;
+    margin-top: 1vh;
+    background-color: #19A7CE;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .facebook-login a {
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 500;
+    width: 15rem;
+  }
+  
+  .facebook-btn {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .forget-password {
+    margin: 3vh 0 2vh 0;
+    font-size: small;
+    width: 15rem;
+  }
+  
+  .forget-password a {
+    text-decoration: none;
+  }
+  
+  /* sign up box */
+  
+  .register-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 20px;
+  }
+  
+  .register-content{
+    width: 15rem;
+    text-align: center;
+  }
+
+  .register-heading{
+    width: 18rem;
+    margin-top: 0px ;
+    color: grey;
+}
+
+.facebook-button{
+    display: flex;
+    align-items: center;
+    background-color: #19A7CE;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border:none;
+    width: 15rem;
+}
+
+/* responesive design */
+
+@media screen and (max-width:1000px){
+    .login{
+    border:none;
+    box-shadow: none;
+    }
+
+    .register-box{
+        border:none;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,36 @@
+.suggestion-container{
+    width: 100%;
+    background-color: #f6f6f6;
+}
+
+.suggestion h3{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 5px 10px;
+}
+
+.suggestion-list{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin:10px 5px;
+}
+
+.suggestion-list img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.suggestion-list a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #2C3333;
+    margin-bottom: 8px;
+}
+
+.suggestion-list a h5{
+    margin:0 0 0 5px;
+}

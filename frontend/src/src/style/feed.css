@@ -1,48 +1,105 @@
 .feed-container{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+
 }
 
-.navigation{
-    display:flex;
-    flex-direction:column;
-    width:13%;
-    margin: 0px;
-    padding: 0px 0px;
-    text-align: center;
-    height: 100vh;
-    }
-
-.navigation-list ul{
-    list-style: none;
-    padding: 0px;
-    
-}
-
-.navigation-list ul a{
-    text-decoration: none;
-    color: black;
-}
-
-.navigation-list ul li{
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding:15px 0px;
-}
-
-.main-feed{
-    display:flex;
-    flex-direction:column;
-    width:70%;
-    background-color: blue;
-}
-
-.chats{
+.feed-posts{
     display: flex;
     flex-direction: column;
-    width: 20%;
-    background-color: green;
+    width: 100%;
+}
+
+.feed-post{
+    margin: 5px 0px;
+
+}
+
+/* post header and username and user profile image  */
+
+
+.post-header{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px ;
+}
+
+.post-header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-header a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: #2C3333;
+    margin-bottom: 8px;
+}
+
+.post-header a h5{
+    margin:0 0 0 5px;
+}
+
+/* post body and main image */
+
+.post-body{
+    width: 100%;
+    height: auto;
+    margin: 5px auto;
+}
+
+.post-body img{
+    width: 100%;
+    margin: auto;
+    height: auto;
+}
+
+.post-icons form {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.post-icons form button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* post footer and likes and comments */
+
+.post-footer{
+    display: flex;
+    flex-direction: column;
+    margin: 3px 0px;
+}
+
+.post-footer h5{
+    margin: 0;
+    font-weight: bold;
+}
+
+.post-description{
+    display: flex;
+    flex-direction: column;
+    margin: 0px ;
+}
+
+.post-description a{
+    text-decoration: none;
+    color: #2C3333;
+    font-weight: bold;
+    /* margin-right: 4px; */
+}
+
+.post-footer p{
+    margin: 0;
 }

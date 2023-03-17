@@ -1,12 +1,12 @@
 import './App.css';
 import Login from "./components/login"
 import Register from "./components/register";
-import Feed from "./components/feed"
+import Home from './components/home';
 
 function App() {
   return (
     <div className="App">
-      <Feed />
+      <Home />
     </div>
   );
 }

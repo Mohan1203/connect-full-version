@@ -4,6 +4,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { GoComment } from "react-icons/go"; 
 import {BiShare} from "react-icons/bi";
 import profilepic from "../media/profilePic.webp";
+import {Link} from "react-router-dom";
 
 function Feed() {
     const [likebtn,setlikebtn] = useState(false);
@@ -25,7 +26,7 @@ function Feed() {
                         </div>
                         <div className="post-icons">
                             <form>
-                                <button onClick={(e)=>{
+                               <button onClick={(e)=>{
                                      e.preventDefault()
                                      setlikebtn(!likebtn);
                                      if(likebtn){
@@ -34,7 +35,7 @@ function Feed() {
                                          setlikes(likes+1);
                                      }
                                 }}>{likebtn?<AiFillHeart size={30} color={"red"}/>:<AiOutlineHeart size={30} name="btn1"/>}</button>
-                                <button ><GoComment size={29}  /></button>
+                                <Link to={"/comments"}><button ><GoComment size={29}  /></button></Link>
                                 <button ><BiShare size={29}  /></button>
                             </form>
                         </div>

@@ -34,10 +34,39 @@
     margin: 15px 0px;
 }
 
+.nav-setting button{
+    background-color: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
 .nav-setting-icon a {
     font-size: 1.2rem;
     text-decoration: none;
     color: black;
     display: flex;
     align-items: center;
+}
+
+.setting-options{
+    margin: 5px 0px;
+    position: relative;
+    right:2vw;
+    text-align: center;
+}
+
+.setting-options ul {
+    margin:0px;
+}
+
+.setting-options ul li {
+    font: bold 1rem Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding: 5px 0px;
+    text-align: left;
+}
+.setting-options ul li a {
+    text-decoration: none;
+    color: black;
 }

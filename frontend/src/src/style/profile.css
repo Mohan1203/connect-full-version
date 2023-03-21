@@ -67,10 +67,12 @@
     margin: 20px 0px;
 }
 
+/* profile images or posts */
+
 .profile-posts{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 2vh 0;
+    margin: 2vh 0vh;
 }
 
 .profile-image {
@@ -79,6 +81,7 @@
     /* margin-right:1rem; */
     box-sizing: border-box;
     object-fit: cover;
+    margin:10px 0px;
 }
 
 .profile-image img {

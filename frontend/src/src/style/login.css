@@ -55,6 +55,11 @@
     color: white;
     font-weight: bold;
   }
+
+  .submit-btn:hover{
+    background-color: #0F7A9B;
+    cursor: pointer;
+  }
   
   .facebook-login a {
     text-decoration: none;
@@ -88,6 +93,7 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 10px #ccc;
     margin-top: 20px;
+    padding: 10px;
   }
   
   .register-content{
@@ -110,6 +116,12 @@
     font-weight: bold;
     border:none;
     width: 15rem;
+    margin: 10px 0px;
+}
+
+.facebook-button:hover{
+    background-color: #0F7A9B;
+    cursor: pointer;
 }
 
 /* responesive design */

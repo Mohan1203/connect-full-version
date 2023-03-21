@@ -5,6 +5,7 @@ import Login from './components/login';
 import Register from './components/register';
 import Comments from './components/comments';
 import Profile from './components/profile';
+import Post from './components/post';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />  
           <Route path="/comments" element={<Comments />} />
-          <Route path="/profile" element={<Profile />} />       
+          <Route path="/profile/:userID" element={<Profile />} />   
+          <Route path="/post/:postID" element={<Post/>}/>    
         </Routes>
       </div>
     </Router>

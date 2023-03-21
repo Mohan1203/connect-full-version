@@ -1,16 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/login.css";
 import { AiFillFacebook } from "react-icons/ai";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [token, setToken] = useState("");
+
+    const validate = (e) => {
+        if (!email || !password) {
+            setError("All fields are required");
+        }else{
+            axios({
+                method:"POST",
+                url:"http://localhost:3333/login",
+                data:JSON.stringify({
+                    email:email,
+                    password:password
+                }),
+                headers:{
+                    "Content-Type" :"application/json"
+                }
+            }).then((res)=>{
+                localStorage.setItem("token", res.data);
+                navigate("/");
+            }).catch((err)=>{
+                setError(err.response.data);
+                navigate("/login");
+            })
+        }
+    }
     return (
         <div className="container">
             <div className="login">
                 <h1 className="instagram">Instagram</h1>
                 <div className="login-form">
-                    <form method="post" >
-                        <input type="text" name="username" placeholder="Username" />
-                        <input type="password" name="password" placeholder="Password" />
+                    <form method="post" onSubmit={(e)=>{
+                        e.preventDefault();
+                        validate()}}>
+                        <input type="text" name="username" placeholder="Username" value={email}
+                            onChange={(e) => {
+                                setEmail(e.target.value)
+                            }} />
+                        <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => {
+                            setPassword(e.target.value)
+                        }} />
                         <button type="submit" className="submit-btn">Log in</button>
                     </form>
                 </div>
@@ -21,9 +59,10 @@ function Login() {
                 <div className="forget-password">
                     <a href="#">Forget password?</a>
                 </div>
+                <div style={{color:"red",fontWeight:"bold"}}>{error?error:null}</div>
             </div>
             <div className="register-box">
-                <div className="register-content"><p>Don't have an account? <a href="#" style={{textDecoration:"none",fontWeight:"bold"}}>Sign up</a></p></div>
+                <div className="register-content"><p>Don't have an account? <Link to="/register" style={{ textDecoration: "none", fontWeight: "bold" }}>Sign up</Link></p></div>
             </div>
         </div>
     )

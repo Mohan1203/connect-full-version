@@ -1,10 +1,16 @@
 import React from "react";
 import "../style/profile.css";
 import profilepic from "../media/profilePic.webp";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 
 function Profile() {
+    const {userID} = useParams();
+    const postID = 123;    
     return (
         <div>
+           
             <div className="profile-container">
                 <div className="profile-header">
                     <div className="profile-img">
@@ -31,13 +37,9 @@ function Profile() {
                 <hr />
                 <div className="profile-posts">
                     <div className="profile-image">
-                        <img src={profilepic} alt="" />
+                        <Link to={`/post/${postID}`}><img src={profilepic} alt="" /></Link>
                     </div>
                     
-                  
-                    
-                    
-                   
                 </div>
             </div>
         </div>

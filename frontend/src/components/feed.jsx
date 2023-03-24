@@ -12,7 +12,7 @@ import axios from "axios";
 function Feed() {
 
     const [data, setData] = useState([]);
-    const [isLiked,setIsLiked] = useState(<AiOutlineHeart size={29} />)
+    const [liked,setLiked] = useState([])
 
     useEffect(() => {
         axios({
@@ -25,27 +25,21 @@ function Feed() {
         }).then((res) => {
             setData(res.data);
         }).catch(err => console.log(err))
-    }, [])
+    }, [liked])
 
     function likeimage(photo) {
         axios({
             method: "PUT",
-            url: `http://localhost:3333/like/${id}`,
+            url: `http://localhost:3333/like/${photo._id}`,
             headers: {
                 "Content_Type": "application/json",
                 "Authorization": localStorage.getItem("token")
             }
         }).then((res) => {
-            const photoIndex = data.findIndex((photo) => photo._id === photo.id)
-            const likedBy = res.data;
-            
+            const photoIndex = data.findIndex((img) => img._id === photo._id)
+            setLiked(res.data);
             const updateData = [...data]
-            updateData[photoIndex].likes = likedBy.length
-            if(photo.likedBy.includes(localStorage.getItem("user"))){
-                document.getElementById("likebtn").innerHTML = <AiOutlineHeart size={29} />
-            }else{
-                document.getElementById("likebtn").innerHTML = <AiFillHeart size={29} color={"red"}/>
-            }          
+            updateData[photoIndex].likes = liked.length;
             setData(updateData)
         }).catch((err) => {
             console.log(err)
@@ -71,10 +65,10 @@ function Feed() {
                                 </div>
                                 <div className="post-icons">
                                     <form>
-                                        <button id="likebtn" onClick={(e) => {
+                                        <button id={item._id} onClick={(e) => {
                                             e.preventDefault();
                                             likeimage(item)
-                                        }}><AiFillHeart size={30}/></button>
+                                        }}>{item.likedBy.includes(localStorage.getItem("userID"))?<AiFillHeart size={30} color={"red"}/>:<AiOutlineHeart size={30} />}</button>
                                         <Link to={"/comments"}><button ><GoComment size={29} /></button></Link>
                                         <button ><BiShare size={29} /></button>
                                     </form>

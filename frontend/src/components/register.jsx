@@ -38,8 +38,8 @@ function Register() {
                 }
             }).then((res) => {
                 navigate("/");
-                console.log(res.data)
-                localStorage.setItem("token", res.data);
+                localStorage.setItem("userID",res.data[0])
+                localStorage.setItem("token", res.data[1]);
             }).catch((err) => {
                 setError(err.response.data)
                 navigate("/register")

@@ -34,6 +34,7 @@ function Navigation() {
                     <li><a href="#">Edit Profile</a></li>
                     <li><a href="#">Privacy policy</a></li>
                     <li><a href="#">Contact us</a></li>
+                    <li><a href="#">log Out</a></li>
                    </ul>
 
                 </div>

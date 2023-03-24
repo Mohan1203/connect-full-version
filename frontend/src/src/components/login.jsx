@@ -9,7 +9,6 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [token, setToken] = useState("");
 
     const validate = (e) => {
         if (!email || !password) {
@@ -26,9 +25,12 @@ function Login() {
                     "Content-Type" :"application/json"
                 }
             }).then((res)=>{
-                localStorage.setItem("token", res.data);
+                localStorage.setItem("userID",res.data[0]);
+                localStorage.setItem("token", res.data[1]);
+                console.log(res.data)
                 navigate("/");
             }).catch((err)=>{
+                console.log(err)
                 setError(err.response.data);
                 navigate("/login");
             })

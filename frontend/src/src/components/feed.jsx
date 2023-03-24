@@ -27,7 +27,7 @@ function Feed() {
         }).catch(err => console.log(err))
     }, [])
 
-    function likeimage(id) {
+    function likeimage(photo) {
         axios({
             method: "PUT",
             url: `http://localhost:3333/like/${id}`,
@@ -36,12 +36,16 @@ function Feed() {
                 "Authorization": localStorage.getItem("token")
             }
         }).then((res) => {
-            const photoIndex = data.findIndex((photo) => photo._id === id)
+            const photoIndex = data.findIndex((photo) => photo._id === photo.id)
             const likedBy = res.data;
             
             const updateData = [...data]
             updateData[photoIndex].likes = likedBy.length
-            updateData[photoIndex].likedBy = likedBy
+            if(photo.likedBy.includes(localStorage.getItem("user"))){
+                document.getElementById("likebtn").innerHTML = <AiOutlineHeart size={29} />
+            }else{
+                document.getElementById("likebtn").innerHTML = <AiFillHeart size={29} color={"red"}/>
+            }          
             setData(updateData)
         }).catch((err) => {
             console.log(err)
@@ -67,9 +71,9 @@ function Feed() {
                                 </div>
                                 <div className="post-icons">
                                     <form>
-                                        <button onClick={(e) => {
+                                        <button id="likebtn" onClick={(e) => {
                                             e.preventDefault();
-                                            likeimage(item._id)
+                                            likeimage(item)
                                         }}><AiFillHeart size={30}/></button>
                                         <Link to={"/comments"}><button ><GoComment size={29} /></button></Link>
                                         <button ><BiShare size={29} /></button>

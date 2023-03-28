@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../style/post.css";
 import "../style/feed.css";
@@ -8,11 +8,15 @@ import { BiShare } from "react-icons/bi";
 import profilepic from "../media/profilePic.webp";
 import { Link } from "react-router-dom";
 import Navigation from "./navigation"
+import axios from "axios";
+
 
 function Post() {
     const { postID } = useParams();
     const [likebtn, setlikebtn] = useState(false);
     const [likes, setlikes] = useState(0);
+
+
 
     const isLikes = (e) => {
         e.preventDefault();

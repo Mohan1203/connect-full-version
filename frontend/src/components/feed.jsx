@@ -3,7 +3,6 @@ import "../style/feed.css";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { GoComment } from "react-icons/go";
 import { BiShare } from "react-icons/bi";
-import profilepic from "../media/profilePic.webp";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -23,6 +22,7 @@ function Feed() {
                 "Authorization": localStorage.getItem("token")
             }
         }).then((res) => {
+            console.log(res.data)
             setData(res.data);
         }).catch(err => console.log(err))
     }, [liked])
@@ -69,7 +69,7 @@ function Feed() {
                                             e.preventDefault();
                                             likeimage(item)
                                         }}>{item.likedBy.includes(localStorage.getItem("userID"))?<AiFillHeart size={30} color={"red"}/>:<AiOutlineHeart size={30} />}</button>
-                                        <Link to={"/comments"}><button ><GoComment size={29} /></button></Link>
+                                        <Link to={`/comments/${item._id}`}><button ><GoComment size={29} /></button></Link>
                                         <button ><BiShare size={29} /></button>
                                     </form>
                                 </div>

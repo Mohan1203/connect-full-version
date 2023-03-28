@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function Navigation() {
     const [active, setActive] = useState(false);
-    const [userID,setuserID] = useState(1);
+    const [userID,setuserID] = useState(localStorage.getItem("userID"));
 
     const showSetting = (e) =>{
         e.preventDefault();

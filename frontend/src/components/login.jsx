@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../style/login.css";
 import { AiFillFacebook } from "react-icons/ai";
 import { Link,useNavigate } from "react-router-dom";
+import FacebookLogin from "react-facebook-login"
 import axios from "axios";
 
 function Login() {

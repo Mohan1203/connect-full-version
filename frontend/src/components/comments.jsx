@@ -52,8 +52,6 @@ function Comments() {
 
     const commentDelete = (e) => {
         e.preventDefault();
-        console.log(commentID)
-        {comment.filter((item)=>{console.log(item._id === commentID)})}
         axios({
         method:"DELETE",
         url:`http://localhost:3333/comment/${commentID}`,
@@ -62,7 +60,6 @@ function Comments() {
             "Authorization":localStorage.getItem("token")
         }
         }).then((res)=>{
-            console.log(updatedComment)
             setUpdatedComment(comment.filter((item)=>item._id !== commentID));
         }).catch((err)=>{
             console.log(err);

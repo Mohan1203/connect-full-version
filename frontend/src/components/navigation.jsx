@@ -5,9 +5,11 @@ import { FiSearch } from "react-icons/fi";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg"
 import { FiSettings } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Navigation() {
+    const navigate = useNavigate();
     const [active, setActive] = useState(false);
     const [userID,setuserID] = useState(localStorage.getItem("userID"));
 
@@ -16,6 +18,23 @@ function Navigation() {
         setActive(!active);
     }
 
+    const logOut = (e) =>{
+        e.preventDefault();
+        axios({
+            method:"POST",
+            url:"http://localhost:3333/logout",
+            headers:{
+                "Content-Type":"Apllication/json",
+                "Authorization":localStorage.getItem("token")
+            }
+        }).then((res)=>{
+            localStorage.removeItem("token");
+            localStorage.removeItem("userID");
+            navigate("/login");
+        }).catch((err)=>{
+            console.log(err);
+        })
+    }
     return (
         <div className="navigation">
             <div className="navigation-list">
@@ -34,7 +53,7 @@ function Navigation() {
                     <li><a href="#">Edit Profile</a></li>
                     <li><a href="#">Privacy policy</a></li>
                     <li><a href="#">Contact us</a></li>
-                    <li><a href="#">log Out</a></li>
+                    <li><a href="#" onClick={(e)=>logOut(e)}>log Out</a></li>
                    </ul>
 
                 </div>

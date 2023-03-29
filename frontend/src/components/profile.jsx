@@ -9,7 +9,6 @@ function Profile() {
     const [data, setData] = useState([])
     const { userID } = useParams();
 
-
     useEffect(() => {
         axios({
             method: "GET",
@@ -19,6 +18,7 @@ function Profile() {
                 "Authorization": localStorage.getItem("token")
             }
         }).then((res) => {
+            console.log(res.data)
             setData(res.data)
         }).catch((err) => {
             console.log(err)
@@ -26,7 +26,8 @@ function Profile() {
 
 
     }, [])
-
+    
+    
 
     return (
         <div>
@@ -40,8 +41,9 @@ function Profile() {
                         <div className="profile-userinfo-header">
                             <h3>{data.username}</h3>
                             <form method="post">
-                                <button type="submit">{data._id === userID ? "Edit Profile" : "Follow"}</button>
+                                <button type="submit">{localStorage.getItem("userID") === userID ? "Edit Profile" :"Follow"}</button>
                             </form>
+                            
                         </div>
                         <div className="profile-userinfo-statics">
                             <p><b>{data.posts ? data.posts.length : 0}</b> posts</p>

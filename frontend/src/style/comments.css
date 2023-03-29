@@ -18,6 +18,7 @@
 }
 
 .comments-pic a img{
+   
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -35,14 +36,28 @@
 
 .content a h5{
     margin: 0;
+
 }
 
 .content p{
     margin: 0;
 }
 
+.comment-sec-1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
 
+.delete-btn{
+    border: none;
+    background-color: transparent;
+    /* display: none; */
+}   
 
+.delete-btn:hover{
+    cursor: pointer;
+}
 
 .input-comment{
     position: fixed;

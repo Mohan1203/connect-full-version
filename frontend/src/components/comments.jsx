@@ -62,7 +62,6 @@ function Comments() {
             "Authorization":localStorage.getItem("token")
         }
         }).then((res)=>{
-            console.log(updatedComment)
             setUpdatedComment(comment.filter((item)=>item._id !== commentID));
         }).catch((err)=>{
             console.log(err);

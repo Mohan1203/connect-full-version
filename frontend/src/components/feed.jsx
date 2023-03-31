@@ -12,6 +12,7 @@ function Feed() {
 
     const [data, setData] = useState([]);
     const [liked,setLiked] = useState([])
+    const [error,setError] = useState("");
 
     useEffect(() => {
         axios({
@@ -22,9 +23,8 @@ function Feed() {
                 "Authorization": localStorage.getItem("token")
             }
         }).then((res) => {
-            console.log(res.data)
             setData(res.data);
-        }).catch(err => console.log(err))
+        }).catch(err => setError(err.response.data))
     }, [liked])
 
     function likeimage(photo) {

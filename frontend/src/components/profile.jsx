@@ -3,6 +3,7 @@ import "../style/profile.css";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Navigation from "./navigation";
 
 function Profile() {
 
@@ -18,7 +19,6 @@ function Profile() {
                 "Authorization": localStorage.getItem("token")
             }
         }).then((res) => {
-            console.log(res.data)
             setData(res.data)
         }).catch((err) => {
             console.log(err)
@@ -30,8 +30,9 @@ function Profile() {
     
 
     return (
+      
+           
         <div>
-
             <div className="profile-container">
                 <div className="profile-header">
                     <div className="profile-img">
@@ -72,6 +73,7 @@ function Profile() {
                 </div>
             </div>
         </div>
+       
     )
 }
 

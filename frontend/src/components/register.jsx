@@ -4,6 +4,8 @@ import { AiFillFacebook } from "react-icons/ai";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
+
+
 function Register() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -37,7 +39,7 @@ function Register() {
                     "Content-Type": "application/json"
                 }
             }).then((res) => {
-                navigate("/");
+                navigate("/setProfile");
                 localStorage.setItem("userID",res.data[0])
                 localStorage.setItem("token", res.data[1]);
             }).catch((err) => {

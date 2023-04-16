@@ -6,6 +6,7 @@ import Register from './components/register';
 import Comments from './components/comments';
 import Profile from './components/profile';
 import Post from './components/post';
+import EditProfile from './components/editprofile';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
           <Route path="/register" element={<Register />} />  
           <Route path="/comments/:imgID" element={<Comments />} />
           <Route path="/profile/:userID" element={<Profile />} />   
-          <Route path="/post/:postID" element={<Post/>}/>    
+          <Route path="/post/:postID" element={<Post/>}/>  
+          <Route path="/editprofile" element={<EditProfile/>}/>
+          
         </Routes>
       </div>
     </Router>

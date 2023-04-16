@@ -52,14 +52,24 @@
 }
 
 .setting-options ul {
-    margin-left: 1.5rem;
+    margin:0rem 1rem;
+    
 }
 
 .setting-options ul li {
+    display: flex;
     font: bold 1rem Arial, Helvetica, sans-serif;
     list-style: none;
     padding: 5px 0px;
     text-align: left;
+    align-items: center;
+}
+
+.setting-listitems{
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    font-size: 1.2rem;
 }
 
 .setting-options ul li a {

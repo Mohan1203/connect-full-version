@@ -6,13 +6,13 @@ import { BiShare } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import {useNavigate} from "react-router-dom"
 
 
 function Feed() {
-
+    const navigate = useNavigate();
     const [data, setData] = useState([]);
     const [liked,setLiked] = useState([])
-
     useEffect(() => {
         axios({
             method: "GET",
@@ -23,7 +23,14 @@ function Feed() {
             }
         }).then((res) => {
             setData(res.data);
-        }).catch(err => console.log(err))
+        }).catch(err =>{ 
+            console.log(err)
+            if(err.response.data === "Token invalid" ){
+                navigate("/login");
+                localStorage.clear()
+            }
+            console.log(err.response.data)
+        })
     }, [liked])
 
     function likeimage(photo) {
@@ -48,6 +55,7 @@ function Feed() {
 
 
     return (
+        
         <div className="feed-container" >
             <div className="feed-posts">
                 {data.map((item, index) => {

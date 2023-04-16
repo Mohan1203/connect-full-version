@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "../style/login.css";
 import { AiFillFacebook } from "react-icons/ai";
 import { Link,useNavigate } from "react-router-dom";
@@ -9,11 +9,11 @@ function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [loginError, setloginError] = useState("");
 
     const validate = (e) => {
         if (!email || !password) {
-            setError("All fields are required");
+            setloginError("All fields are required");
         }else{
             axios({
                 method:"POST",
@@ -32,7 +32,7 @@ function Login() {
                 navigate("/");
             }).catch((err)=>{
                 console.log(err)
-                setError(err.response.data);
+                setloginError(err.response.data);
                 navigate("/login");
             })
         }
@@ -62,7 +62,7 @@ function Login() {
                 <div className="forget-password">
                     <a href="#">Forget password?</a>
                 </div>
-                <div style={{color:"red",fontWeight:"bold"}}>{error?error:null}</div>
+                <div style={{color:"red",fontWeight:"bold"}}>{loginError?loginError:null}</div>
             </div>
             <div className="register-box">
                 <div className="register-content"><p>Don't have an account? <Link to="/register" style={{ textDecoration: "none", fontWeight: "bold" }}>Sign up</Link></p></div>

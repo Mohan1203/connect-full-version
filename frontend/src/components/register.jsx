@@ -51,7 +51,27 @@ function Register() {
     }
 
     function func(response){
-        console.log(response.accessToken)
+        axios({
+            method:"POST",
+            url:"http://localhost:3333/register",
+            data: JSON.stringify({
+                email: response.email,
+                fullname: response.name,
+                username: response.email,
+                password: "Mohan@101"
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then((res) => {
+            navigate("/");
+            localStorage.setItem("userID",res.data[0])
+            localStorage.setItem("token", res.data[1]);
+        }).catch((err) => {
+            setError(err.response.data)
+            navigate("/register")
+        })
+        console.log(response)
     }
     
 
@@ -61,7 +81,7 @@ function Register() {
             <div className="login">
                 <h1 className="instagram">Instagram</h1>
                 <h4 className="register-heading">Sign up to see photos and videos from your friends.</h4>
-                <div style={{margin:"10px"}}><FacebookLogin
+                <div style={{margin:"10px",padding:"5px"}}><FacebookLogin
                 appId="977219543296251"
                 autoLoad={false}
                 fields="name,email,picture"

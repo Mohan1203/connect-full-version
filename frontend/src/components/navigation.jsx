@@ -6,6 +6,10 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg"
 import { FiSettings } from "react-icons/fi";
 import { Link,useNavigate } from "react-router-dom";
+import {BiLogOut} from "react-icons/bi";
+import {BsTelephoneForwardFill} from "react-icons/bs";
+import {MdPrivacyTip} from "react-icons/md";
+import {BiEdit} from "react-icons/bi";
 import axios from "axios";
 
 function Navigation() {
@@ -49,11 +53,11 @@ function Navigation() {
             <div className="nav-setting">
                 <div className="setting-options" style={active?{display:"flex"}:{display:"none"}}>
                    <ul>
-                    <li><a href="#">Your account</a></li>
-                    <li><a href="#">Edit Profile</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#" onClick={(e)=>logOut(e)}>log Out</a></li>
+                    <li ><a href="#" className="setting-listitems"><CgProfile size={30} style={{ margin: "0 10px" }} />Your account</a></li>
+                    <li ><Link to={"/editprofile"} className="setting-listitems"><BiEdit size={30} style={{ margin: "0 10px" }} />Edit Profile</Link></li>
+                    <li ><a href="#" className="setting-listitems"><MdPrivacyTip size={30} style={{ margin: "0 10px" }} />Privacy policy</a></li>
+                    <li ><a href="#" className="setting-listitems"><BsTelephoneForwardFill size={30} style={{ margin: "0 10px" }} />Contact us</a></li>
+                    <li ><a href="#" onClick={(e)=>logOut(e)} className="setting-listitems"><BiLogOut size={30} style={{ margin: "0 10px" }} />log Out</a></li>
                    </ul>
 
                 </div>

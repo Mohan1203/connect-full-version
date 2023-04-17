@@ -52,8 +52,6 @@ function Comments() {
 
     const commentDelete = (e) => {
         e.preventDefault();
-        console.log(commentID)
-        {comment.filter((item)=>{console.log(item._id === commentID)})}
         axios({
         method:"DELETE",
         url:`http://localhost:3333/comment/${commentID}`,

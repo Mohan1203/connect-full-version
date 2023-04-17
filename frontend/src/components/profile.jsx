@@ -3,11 +3,12 @@ import "../style/profile.css";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Navigation from "./navigation";
 
 function Profile() {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [followData,setFollowData] = useState([]);
+    const [isLoading,setIsLoading] = useState(true);
     const { userID } = useParams();
 
     useEffect(() => {
@@ -20,19 +21,35 @@ function Profile() {
             }
         }).then((res) => {
             setData(res.data)
+            setIsLoading(false)
         }).catch((err) => {
             console.log(err)
         })
 
 
-    }, [])
-    
-    
+    },[userID,followData])
 
+    const followUser = (e) =>{
+        e.preventDefault();
+        axios({
+            method:"POST",
+            url:`http://localhost:3333/follow/user/${userID}`,
+            headers:{
+                "content-type":"application/json",
+                "Authorization":localStorage.getItem("token")
+            }
+        }).then((res)=>{
+            setFollowData(res.data)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
+    console.log(data)
     return (
       
            
         <div>
+
             <div className="profile-container">
                 <div className="profile-header">
                     <div className="profile-img">
@@ -72,8 +89,8 @@ function Profile() {
 
                 </div>
             </div>
+} 
         </div>
-       
     )
 }
 

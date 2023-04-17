@@ -6,8 +6,6 @@ import Register from './components/register';
 import Comments from './components/comments';
 import Profile from './components/profile';
 import Post from './components/post';
-import Search from './components/search';
-import SetProfile from "./components/setProfile";
 
 function App() {
   return (
@@ -20,8 +18,6 @@ function App() {
           <Route path="/comments/:imgID" element={<Comments />} />
           <Route path="/profile/:userID" element={<Profile />} />   
           <Route path="/post/:postID" element={<Post/>}/>    
-          <Route path="/search" element={<Search/>}/>
-          <Route path="/setProfile" element={<SetProfile/>}/>
         </Routes>
       </div>
     </Router>

@@ -32,7 +32,7 @@ function Search() {
             <div className="search-container">
                 <form method="GET" onSubmit={getSearchValue}>
                     <div className="search-box">
-                        <input type="text" name="search" placeholder="Search" className="search-box-input" value={search} onChange={(e) => setSearch(e.target.value)} />
+                        <input type="text" name="search" placeholder="Enter Username Only" className="search-box-input" value={search} onChange={(e) => setSearch(e.target.value)} />
                         <button type="submit" className="search-box-btn"><BsSearch size={20} /></button>
                     </div>
                 </form>

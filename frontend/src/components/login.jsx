@@ -33,6 +33,8 @@ function Login() {
             }).catch((err)=>{
                 console.log(err)
                 setloginError(err.response.data);
+                setEmail("");
+                setPassword("");
                 navigate("/login");
             })
         }

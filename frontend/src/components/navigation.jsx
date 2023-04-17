@@ -5,7 +5,8 @@ import { FiSearch } from "react-icons/fi";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg"
 import { FiSettings } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Navigation() {
     const navigate = useNavigate();
@@ -57,7 +58,7 @@ function Navigation() {
                 <ul >
                     <Link to={"/"}><a href="#" onClick={()=>setActive(false)}><li><GrHomeRounded size={30} style={{ margin: "0 10px" }} />Home</li></a></Link>
                     <Link to={"/search"} onClick={()=>setActive(false)}><li> <FiSearch size={30} style={{ margin: "0 10px" }} />Search</li></Link>
-                    <a href="#" onClick={()=>setActive(false)}><li ><AiOutlinePlusCircle size={30} style={{ margin: "0 10px" }} />Add Post</li></a>
+                    <Link to={"/addpost"} onClick={()=>setActive(false)}><li ><AiOutlinePlusCircle size={30} style={{ margin: "0 10px" }} />Add Post</li></Link>
                     <Link to={`/profile/${userID}`}><a href="#" onClick={()=>setActive(false)}><li> <CgProfile size={30} style={{ margin: "0 10px" }} />Profile</li></a></Link>
                 </ul>
             </div>
@@ -68,7 +69,7 @@ function Navigation() {
                     <li><a href="#">Edit Profile</a></li>
                     <li><a href="#">Privacy policy</a></li>
                     <li><a href="#">Contact us</a></li>
-                    <li><a href="#">log Out</a></li>
+                    <li onClick={logOut} style={{cursor:"pointer"}}>log Out</li>
                    </ul>
 
                 </div>

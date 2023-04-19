@@ -104,3 +104,16 @@
 .post-footer p{
     margin: 0;
 }
+
+@media screen and (max-width:425px){
+    .feed-container{
+        width: 90%;
+        margin: auto;
+    }
+}
+@media screen and (min-width:425px) and (max-width:1024px){
+    .feed-container{
+        width: 70%;
+        margin: auto;
+    }
+}

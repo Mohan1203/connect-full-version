@@ -10,6 +10,8 @@ function Search() {
     const [data, setData] = useState("");
     const [error, setError] = useState("");
 
+
+
     function getSearchValue(e) {
         e.preventDefault();
         axios({

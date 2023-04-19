@@ -2,7 +2,6 @@ import React, { useState,useContext } from "react";
 import "../style/login.css";
 import { AiFillFacebook } from "react-icons/ai";
 import { Link,useNavigate } from "react-router-dom";
-import FacebookLogin from "react-facebook-login"
 import axios from "axios";
 
 function Login() {
@@ -39,6 +38,8 @@ function Login() {
             })
         }
     }
+
+   
     return (
         <div className="container">
             <div className="login">
@@ -59,7 +60,9 @@ function Login() {
                 </div>
                 <p style={{ fontWeight: "bold", color: "grey" }}>OR</p>
                 <div className="facebook-login">
-                    <a href="#" className="facebook-btn"><AiFillFacebook fill="blue" size={23} style={{ margin: "0px 10px" }} />Log in with facebook</a>
+                <div style={{ margin: "10px", padding: "5px" }}><AiFillFacebook size="30px" color="white" style={{ backgroundColor: "blue", borderRadius: "50%", padding: "5px" }}
+              
+                /></div>
                 </div>
                 <div className="forget-password">
                     <a href="#">Forget password?</a>

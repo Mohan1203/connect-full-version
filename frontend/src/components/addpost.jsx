@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "../style/addpost.css";
 import axios from 'axios';
+import Navigation from './navigation';
 
 function AddPost() {
     const navigate = useNavigate();
@@ -54,6 +55,7 @@ function AddPost() {
 
     return (
         <div>
+            <Navigation />
             <div>
                 <div className='addpost-container'>
                     <form>

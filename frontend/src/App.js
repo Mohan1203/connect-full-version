@@ -8,6 +8,8 @@ import Profile from './components/profile';
 import Post from './components/post';
 import Search from './components/search';
 import AddPost from './components/addpost';
+import Editprofile from "./components/editprofile"
+import Accountsetting from './components/accountsetting';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <Route path="/addpost" element={<AddPost/>} />
           <Route path="/post/:postID" element={<Post/>}/>  
           <Route path="/comments/:imgID" element={<Comments />} />
-          <Route path="/profile/:userID" element={<Profile />} />   
+          <Route path="/profile/:userID" element={<Profile />} />  
+          <Route path="/editprofile" element={<Editprofile/>}/> 
+          <Route path="/accountsetting" element={<Accountsetting/>}/>
         </Routes>
       </div>
     </Router>

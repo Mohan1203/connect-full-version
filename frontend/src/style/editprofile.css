@@ -26,7 +26,11 @@
     margin:10px 0px;
 }
 
-.editprofile-changeprofile input,h3{
+.editprofile-changeprofile input{
+    margin-left: 10px;
+}
+
+.editprofile-username{
     margin-left: 10px;
 }
 

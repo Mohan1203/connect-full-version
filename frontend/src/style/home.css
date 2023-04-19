@@ -12,3 +12,39 @@
 .home-feed{
     width:70%;
 }
+
+/* for mobile view */
+
+@media screen and (max-width:425px){
+   
+    .home-suggestion{
+        display: none;
+    }
+    .home-navigation{
+        display:flex;
+        flex-direction:row;
+        position: fixed;
+        bottom: 0;
+    }
+    .home-feed{
+        width:100%;
+    }
+}
+
+/* for tablet view */
+
+@media screen and (min-width:425px) and (max-width:1024px) {
+    .home-suggestion{
+        display: none;
+    }
+
+    .home-navigation{
+        display:flex;
+        flex-direction:column;
+        position: fixed;
+    }
+
+    .home-feed{
+        width: 100%;
+    }
+}

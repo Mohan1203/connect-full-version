@@ -102,7 +102,6 @@
     display:grid;
     width: 50%;
     margin: auto;
-    /* justify-items: stretch; */
     grid-template-columns: repeat(3,1fr);
 }
 
@@ -115,15 +114,49 @@
     grid-template-columns: repeat(3,1fr);
 }
 
+.profile-mobile-userinfo{
+    display: none;
+}
+
+
 .profile-images img {
-    /* border: 2px solid #e6e6e6; */
     padding: 0px 10px;
     width:300px;
     height: 300px;
 }
 
 
-@media screen and (max-width:1024px){
+@media screen and (min-width:425px) and (max-width:1024px){
+    .profile-maincontainer{
+        width:90%;
+        margin: auto;
+    }
+
+    .profile-header{
+        width: 90%;
+        padding-bottom: 3vh;
+    }
+
+    .profile-img{
+        margin-right: 3vw;
+    }
+
+    .profile-posts{
+        width: 75%;
+        margin:auto;
+    }
+
+
+
+    .profile-images img {
+        padding: 0px 10px;
+        width:150px;
+        height: 150px;
+    }
+}
+
+
+@media screen and  (max-width:425px){
    
     
     .profile-maincontainer{
@@ -131,18 +164,55 @@
     }
 
     .profile-container {
-        width: 90%;
+        width:100%;
     }
 
     .profile-header {
         width: 90%;
+        padding-bottom: 3vh;
     }
 
     .profile-userinfo{
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;    
+    }
+
+    .profile-bigdevice-userinfo{
+        display: none;
+    }
+
+    .profile-mobile-userinfo{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* margin: 0px 2rem; */
+        width: 100%;
+    }
+
+    .profile-mobile-bio{
+        margin: 0px 2rem;
+        width: 100%;
+    }
+
+    .profile-mobile-userinfo-statics{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+        border-top: 1px solid #e6e6e6;
+        border-bottom:1px solid #e6e6e6;
+    }
+
+    .profile-mobile-userinfo-statics p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding:0.5rem 2rem .5rem 2rem;
+        
     }
 
     .profile-userinfo-header h3{
@@ -174,7 +244,7 @@
     }
     
     .followingbtn{
-        
+        margin: 0px;    
         font-weight: bold;
         font-size: medium;
         padding: 7px 30px;
@@ -195,14 +265,13 @@
         width: 90%;
         box-sizing: border-box;
         object-fit: cover;
-        /* margin:10px; */
         grid-template-columns: repeat(3,1fr);
     }
 
     .profile-images img {
-        /* border: 2px solid #e6e6e6; */
-        padding: 0px 10px;
-        width:10rem;
-        height: 10rem;
+        border: none;
+        padding: 0px;
+        width:7rem;
+        height: 7rem;
     }
 }

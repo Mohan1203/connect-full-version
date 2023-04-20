@@ -10,9 +10,7 @@ function EditProfile() {
   const [updatedData, setUpdatedData] = useState([]);
   const [profilePhoto, setProfilePhoto] = useState();
   const [name, setName] = useState();
-  const [email, setEmail] = useState()
   const [bio, setBio] = useState()
-  const [username, setUsername] = useState()
 
   useEffect(() => {
     axios({
@@ -33,14 +31,12 @@ function EditProfile() {
 
   function setProfile(e) {
     e.preventDefault();
-    if (!name || !bio || !profilePhoto || !username || !email) {
+    if (!name || !bio || !profilePhoto ) {
       setError("All fields are required fields");
     }else{
       const formData = new FormData();
     formData.append('name', name);
-    formData.append('email', email);
     formData.append('bio', bio);
-    formData.append('username', username);
     if (profilePhoto) {
       const blob = new Blob([profilePhoto], { type: profilePhoto.type });
       console.log(blob)
@@ -87,10 +83,7 @@ function EditProfile() {
                 
                 <span><b>Bio*</b></span>
                 <textarea rows={3} cols={25} className="editprofile-textarea" value={bio} onChange={(e) => { setBio(e.target.value) }} />
-                <span><b>Username</b></span>
-                <input type="text" name="username" id="username" className="editptofile-inputs" value={username} onChange={(e) => { setUsername(e.target.value) }} />
-                <span><b>Email</b></span>
-                <input type="email" name="email" id="email" className="editptofile-inputs" value={email} onChange={(e) => { setEmail(e.target.value) }} />
+                
               </div>
               <div style={{color:"red",fontWeight:"bold"}}>{error?error:null}</div>
               <button type="submit" className="editprofile-btn" onClick={setProfile}>Submit</button>

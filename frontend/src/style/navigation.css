@@ -89,6 +89,7 @@
 
 .setting-listitems{
     display: flex;
+    color: black;
     align-items: center;
     padding: 1px;
     font-size: 1rem;
@@ -125,6 +126,12 @@
         align-items: center;
         width: 50%;
         margin: .5rem auto 0rem auto;
+    }
+
+    .setting-tablets-options ul li{
+        list-style: none;
+        color: black;
+        padding: 5px 0px;
     }
     
 }
@@ -171,6 +178,27 @@
 
     .nav-mobile-icons{
         margin: 2rem;
+    }
+    
+    .setting-mobile-options{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 40px;
+        right: 35px;
+      
+        margin: auto;
+    }
+
+    .setting-mobile-options ul li{
+        list-style: none;
+        color: black;
+    }
+
+    .setting-mobile-listitems{
+        color: black;
     }
 
   

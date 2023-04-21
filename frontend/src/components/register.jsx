@@ -56,7 +56,7 @@ function Register() {
                 }
             }).then((res) => {
                 
-                navigate("/setProfile");
+                navigate("/");
                 localStorage.setItem("userID", res.data[0])
                 localStorage.setItem("token", res.data[1]);
             }).catch((err) => {
@@ -86,9 +86,9 @@ function Register() {
                         "Content-Type":"application/json"
                     }
                 }).then((res)=>{
-                    navigate("/");
                     localStorage.setItem("userID", res.data[0])
                     localStorage.setItem("token", res.data[1]);
+                    navigate("/");
                 }).catch((err)=>{
                     setError(err.response.data.toString())
                     console.log(err.response)

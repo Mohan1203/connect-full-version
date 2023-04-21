@@ -72,3 +72,26 @@
     cursor: pointer;
     background-color: lightgrey;
 }
+
+
+@media screen and (max-width: 768px) {
+    .editprofile-container{
+        width: 80%;
+    }
+    .editprofile-header{
+        width: 80%;
+    }
+
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .editprofile-container{
+        width: 80%;
+    }
+    .editprofile-header{
+        width: 80%;
+    }
+
+    
+}

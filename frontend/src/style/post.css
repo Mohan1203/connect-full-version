@@ -24,6 +24,18 @@
     margin:0 0 0 5px;
 }
 
+.postheader-sec1{
+    width: 100%;
+}
+
+.post-deletebtn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: auto;
+}
+
 /* post body and main image */
 
 .post-body{

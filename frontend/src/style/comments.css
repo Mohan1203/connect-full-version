@@ -97,3 +97,38 @@
 .input-comment input:focus{
     outline: none;
 }
+
+@media screen and (max-width:425px){
+    .comment-container{
+        width: 100%;
+        margin:10px 5px;
+    }
+
+    .input-comment{
+        width: 100%;
+        position: fixed;
+       
+        bottom:2.5rem;
+    }
+    .input-comment button{
+        margin:0px;
+    }
+}
+
+@media screen and (min-width:425px) and (max-width:1024px){
+    .comment-container{
+        width: 50%;
+        margin:10px auto;
+    }
+
+    .input-comment{
+        width: 50%;
+        position: fixed;
+        margin: auto;
+        bottom:2.5rem;
+    }
+    .input-comment button{
+        margin:0px;
+    }
+}
+    

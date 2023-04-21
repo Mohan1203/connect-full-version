@@ -47,6 +47,19 @@ function Navigation() {
                     <Link to={"/search"} onClick={() => setActive(false)}> <FiSearch size={30} style={{ margin: "0 20px",color:"black",padding:"3px" }} /></Link>
                     <Link to={"/addpost"} onClick={() => setActive(false)}><AiOutlinePlusCircle size={30} style={{ margin: "0 20px",color:"black",padding:"3px"  }} /></Link>
                     <Link to={`/profile/${userID}`} onClick={() => setActive(false)}> <CgProfile size={30} style={{ margin: "0 20px",color:"black",padding:"3px"  }} /></Link>
+                    <div className="nav-setting">
+                    <div className="setting-mobile-options" style={active ? { display: "flex" } : { display: "none" }}>
+                        <ul>
+                            <li ><Link to={"/accountsetting"} className="setting-mobile-listitems"><CgProfile size={30} style={{ margin: "0 10px" }} /> </Link></li>
+                            <li ><Link to={"/editprofile"} className="setting-mobile-listitems"><BiEdit size={30} style={{ margin: "0 10px" }} /> </Link></li>
+                            <li ><a href="#" className="setting-mobile-listitems"><MdPrivacyTip size={30} style={{ margin: "0 10px" }} /> </a></li>
+                            <li ><a href="#" className="setting-mobile-listitems"><BsTelephoneForwardFill size={30} style={{ margin: "0 10px" }} /> </a></li>
+                            <li ><a href="#" onClick={(e) => logOut(e)} className="setting-mobile-listitems"><BiLogOut size={30} style={{ margin: "0 10px" }} /> </a></li>
+                        </ul>
+
+                    </div>
+                  
+                </div>
                     <a href="#" onClick={showSetting}><FiSettings size={30} style={{ margin: "0 20px",color:'black',padding:'3px' }} /></a>
                     </div>
 
@@ -58,6 +71,19 @@ function Navigation() {
                     <Link to={"/addpost"} onClick={() => setActive(false)}><AiOutlinePlusCircle size={40} style={{ margin: "10px 20px",color:"black",padding:"3px"  }} /></Link>
                     <Link to={`/profile/${userID}`} onClick={() => setActive(false)}> <CgProfile size={40} style={{ margin: "10px 20px",color:"black",padding:"3px"  }} /></Link>
                     <a href="#" onClick={showSetting}><FiSettings size={40} style={{ margin: "10px 20px",color:'black',padding:'3px' }} /></a>
+                </div>
+                <div className="nav-setting">
+                    <div className="setting-tablets-options" style={active ? { display: "flex" } : { display: "none" }}>
+                        <ul>
+                            <li ><Link to={"/accountsetting"} className="setting-listitems"><CgProfile size={30} style={{ margin: "0 10px" }} /> </Link></li>
+                            <li ><Link to={"/editprofile"} className="setting-listitems"><BiEdit size={30} style={{ margin: "0 10px" }} /> </Link></li>
+                            <li ><a href="#" className="setting-listitems"><MdPrivacyTip size={30} style={{ margin: "0 10px" }} /> </a></li>
+                            <li ><a href="#" className="setting-listitems"><BsTelephoneForwardFill size={30} style={{ margin: "0 10px" }} /> </a></li>
+                            <li ><a href="#" onClick={(e) => logOut(e)} className="setting-listitems"><BiLogOut size={30} style={{ margin: "0 10px" }} /> </a></li>
+                        </ul>
+
+                    </div>
+                  
                 </div>
             </div>
             <div className="nav-bigdevice">

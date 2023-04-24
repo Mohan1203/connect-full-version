@@ -24,7 +24,12 @@ function Feed() {
             }
         }).then((res) => {
             setData(res.data);
-        }).catch(err => console.log(err))
+        }).catch(err =>{
+            if(err.response.data === "Token invalid"){
+                console.log(err.response.message)
+                navigate("/login")
+            }
+        })
     }, [liked])
 
     function likeimage(photo) {
